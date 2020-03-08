@@ -62,6 +62,20 @@
 	</style>
 </head>
 <body>
+	<?php
+	$conn=mysqli_connect("localhost:3308","root","","cafeteria");
+	if(! $conn)
+	{
+		echo "cann't connect";
+		echo mysqli_connect_error();
+	exit;
+	}
+	else
+	{
+		$users=mysqli_query($conn,"select * from users");
+		// var_dump($users);
+	}
+	?>
 	<div id="headerDiv">
 		<h2 >All Users</h2>
 	</div>
@@ -76,42 +90,27 @@
 		   		<th scope="col" class="image">Image</th>
 		      <th scope="col">Name</th>
 		      <th scope="col">Room</th>
+		      <th scope="col">Ext.</th>
 		      <th scope="col" style="width: 150px;">Action</th>
 		      
 		      
 		    </tr>
 		  </thead>
 		  <tbody>
+		  	<?php
+		  	while($row=mysqli_fetch_assoc($users))
+			{
+		  	?>
 		    <tr>
-		    	<td  class="image"><img src="../assets/Images/photo1.jpg"></td>
-		      <th scope="row">Hend</th>
-		      <td>1011</td>
+		    	<td  class="image"><img src="../assets/Images/<?php echo $row['image'] ?>" ></td>
+		      <th scope="row"><?php echo $row['name']; ?></th>
+		      <td><?php echo $row['room_no']; ?></td>
+		      <td><?php echo $row['ext']; ?></td>
 		      <td style="width: 150px;">
 		      	<a href="#">Edit</a><br>
-		      	<a href="#">Delete</a></td>
-		      
-		      
+		      	<a href="#">Delete</a></td>  
 		    </tr>
-		    <tr>
-		    	<td class="image"><img src="../assets/Images/photo2.jpg"></td>
-		      <th scope="row">Nadia</th>
-		      <td>1012</td>
-		      <td style="width: 150px;">
-		      	<a href="#">Edit</a><br>
-		      	<a href="#">Delete</a></td>
-		    
-		      
-		    </tr>  
-		    <tr>
-		    	<td class="image"><img src="../assets/Images/photo3.jpeg"></td>
-		      <th scope="row">Noha</th>
-		      <td >1013</td>
-		      <td style="width: 150px;">
-		      	<a href="#">Edit</a><br>
-		      	<a href="#">Delete</a></td>
-		      
-		      
-		    </tr>
+		    <?php } ?>
 		    
 		  </tbody>
 		</table>
