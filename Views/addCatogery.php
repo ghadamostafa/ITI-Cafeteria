@@ -32,57 +32,37 @@
         }
     </style>
 </head>
+<!-- category_name category_id -->
+
 
 <body>
     <?php
     include 'adminNavBar.php';
+    include '../Models/dbConnection.php';
+    if (!empty($_POST["category_name"])) {
+        $category_name = mysqli_escape_string($connect, $_POST['category_name']);
+        var_dump($_POST);
+        $result = mysqli_query($connect, "insert into category set category_name='$category_name'");
+        if ($result) {
+            header("Location:../Views/addProduct.php");
+        } else {
+            echo "Enter catrgory";
+        }
+    }
+
     ?>
+    <form action="#" method="POST" enctype="multipart/form-data">
+        <h1 style="text-align: center">Add Catogery </h1>
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Category name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="category_name">
+            </div>
+        </div>
 
-    <form action="../Controllers/addProductController.php" method="POST" enctype="multipart/form-data">
-        <h1 style="text-align: center">Add Product </h1>
-        <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Product</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" name="product_name">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Price</label>
-            <div class="col-sm-10">
-                <input type="number" class="form-control" name="price">
-            </div>
-        </div>
-        <fieldset class="form-group">
-            <div class="row">
-                <label class="col-form-label col-sm-2 pt-0">Catogery</label>
-                <select class="custom-select" name="category_id" style="width: 50%; margin-left: 15px;">
-                    <option  selected>Open this select menu</option>
-                    <?php
-                        include '../Models/dbConnection.php';
-                        $result = mysqli_query($connect, "select * from category ");
-                        if ($result) {
-                            var_dump($result);
-                            while ($row = mysqli_fetch_assoc($result)) {
-                            
-                               echo " <option value='{$row['category_id']}'>{$row['category_name']}</option>";
-                            }
-
-                        }
-                    ?>
-                </select>
-                <a href="addCatogery.php" style="margin-left:20px; color:blanchedalmond"> Add Category</a>
-            </div>
-        </fieldset>
-        <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Product Image</label>
-            <div class="col-sm-10">
-                <input type="file" class="form-control-file" name="photo">
-            </div>
-        </div>
         <div class="form-group row">
             <div style="margin: 10px" class="col-sm-10">
                 <button type="submit" class="btn  login_btn" name="done" style="margin-left:35%; ">Submit</button>
-                <button type="reset" class="btn " style="margin-left:25%">Reset</button>
             </div>
         </div>
     </form>

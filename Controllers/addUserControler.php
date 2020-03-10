@@ -1,9 +1,7 @@
 <?php
 
 // DB connection
-$connect = mysqli_connect("localhost:3307", "root", "", "iti_cafeteria");
-if ($connect) {
-    //check login in DB
+include '../Models/dbConnection.php';
     if (isset($_POST["done"])) {
         if (
             !empty($_POST["name"]) && !empty($_POST["email"]) && !empty($_POST["password"])
@@ -30,7 +28,7 @@ if ($connect) {
             var_dump($_FILES['photo']['tmp_name']);
 
             if (!empty($_FILES['photo']['tmp_name'])) {
-                $dir_to_upload = "../images/";
+                $dir_to_upload = "../assets/Images/";
                 $dir_to_upload = $dir_to_upload . basename($_FILES['photo']['name']);
                 if (move_uploaded_file($_FILES['photo']['tmp_name'], $dir_to_upload)) {
                     $result = mysqli_query($connect, "insert into users set name='$name',email='$email',password='$password' ,room_no='$room_no',ext='$ext',image='$dir_to_upload'");
@@ -52,7 +50,5 @@ if ($connect) {
             echo "Must Enter All Fields";
         }
     } 
-} else {
-    echo "No Connection";
-}
+
 ?>

@@ -1,9 +1,8 @@
 <?php
 
 // DB connection
-$connect = mysqli_connect("localhost:3307", "root", "", "iti_cafeteria");
-if ($connect) {
-    //check login in DB
+include '../Models/dbConnection.php';
+
     if (!empty($_POST["email"]) && !empty($_POST["password"])) {
         $email = mysqli_escape_string($connect, $_POST['email']);
         $password = mysqli_escape_string($connect, $_POST['password']);
@@ -25,7 +24,4 @@ if ($connect) {
             echo "edit";
         }
     }
-}else{
-    echo "No Connection";
-}
 ?>
