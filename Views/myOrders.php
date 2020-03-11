@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
         .order-spread {
             display: none;
         }
+
         .display-block {
             display: block;
         }
@@ -18,7 +20,6 @@
 <body>
     <section class="container">
         <h1>My Orders</h1>
-        <!--        Start of Date Picker-->
         <form action="">
             <div class="row">
                 <div class="from-group col-6">
@@ -32,7 +33,6 @@
             </div>
         </form>
     </section>
-    <!--        End of Date Picker-->
     <section class="container">
         <table class="table">
             <thead class="thead-dark">
@@ -107,9 +107,7 @@
                             </div>
                         </div>
                     </td>
-                    <!-- Item -->
                 </tr>
-                <!-- ! End of Row 1 Spread -->
                 <tr>
                     <td>
                         <span>2015/02/01 10.30 AM</span>
@@ -118,7 +116,6 @@
                     <td>Out for delivery</td>
                     <td><span>20</span> EGP</td>
                     <td></td>
-
                 </tr>
                 <tr>
                     <td>
@@ -134,9 +131,7 @@
     </section>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<!-- <script scr="../assets/js/JQuery-3.3.1.min.js"></script> -->
 <script scr="../assets/js/bootstrap.min.js"></script>
 <script scr="../assets/js/popper.js"></script>
 <script src="../assets/js/Orders.js"></script>
-
 </html>

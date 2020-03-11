@@ -1,5 +1,4 @@
 <?php
-
 // DB connection
 include '../Models/dbConnection.php';
     if (isset($_POST["done"])) {
@@ -22,11 +21,7 @@ include '../Models/dbConnection.php';
             $rePassword = trim($rePassword);
             $ext = trim($ext);
             $result = "";
-            var_dump($_POST);
-            echo "*************";
-            // var_dump($_FILES);
             var_dump($_FILES['photo']['tmp_name']);
-
             if (!empty($_FILES['photo']['tmp_name'])) {
                 $dir_to_upload = "../assets/Images/";
                 $dir_to_upload = $dir_to_upload . basename($_FILES['photo']['name']);
@@ -35,20 +30,17 @@ include '../Models/dbConnection.php';
                     if ($result) {
                         header("Location:../Views/login.php");
                     } else {
-                        echo "BBBBBBBBBaddddddddd";
+                        echo "Result false";
                     }
                 } else {
-                    // var_dump($_FILES['image']['tmp_name']);
-                    echo "BBBBBBBBBaddddddddd222222222222";
+                    echo "Add picture";
                 }
             } else {
-                echo "heeeeeeeeeere";
+                echo "Pic Error";
             }
         } else {
 
             header("Location:../Views/addUser.php");
             echo "Must Enter All Fields";
         }
-    } 
-
-?>
+    }

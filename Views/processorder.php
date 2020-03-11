@@ -91,10 +91,7 @@
   <body>
 	<div class="container">
     <?php include '../Controllers/iterateprocess.php';?>
-
 		</div>
-
-    
   </body>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.14/vue.min.js'></script>
   <script>

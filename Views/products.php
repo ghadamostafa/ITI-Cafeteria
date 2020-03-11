@@ -8,12 +8,9 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	<style >
 		img{
-			width:250px;
-			height: 250px;
 			margin: 20px;
 			display: inline;
 			border-radius: 20px;
-			/*position: absolute;*/
 		}
 		.row{
 			margin: 20px auto;
@@ -96,34 +93,28 @@
 		      <td style="width: 350px;"><img src="../assets/Images/greenTea.jpg"></td>
 		    </tr>  
 		    <tr>
-		    	
 		      <th scope="row">Coffee</th>
 		      <td >15EGP</td>
 		      <td style="width: 150px;">Available<br>
 		      	<a href="#">Edit</a><br>
 		      	<a href="#">Delete</a></td>
 		      <td style="width: 350px;"><img src="../assets/Images/cofee.jpg"></td>
-		      
 		    </tr>
 		    <tr>
-		    	
 		      <th scope="row">Latte</th>
 		      <td >15EGP</td>
 		      <td style="width: 150px;">Available<br>
 		      	<a href="#">Edit</a><br>
 		      	<a href="#">Delete</a></td>
-		      <td style="width: 350px;"><img src="../assets/Images/latte.jpg"></td>
-		      
+		      <td style="width: 350px;"><img src="../assets/Images/latte.jpg"></td>		      
 		    </tr>
 		    <tr>
-		    	
 		      <th scope="row">Cappuccino</th>
 		      <td >15EGP</td>
 		      <td style="width: 150px;">Available<br>
 		      	<a href="#">Edit</a><br>
 		      	<a href="#">Delete</a></td>
 		      <td style="width: 350px;"><img src="../assets/Images/cappuccino.webp"></td>
-		      
 		    </tr>
 		  </tbody>
 		</table>

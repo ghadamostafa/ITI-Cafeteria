@@ -8,8 +8,6 @@
     <title></title>
     <link href="../assets/css/bootstrap.css" rel="stylesheet" />
     <link href="../assets/css/font-awesome.css" rel="stylesheet" />
-    <!--Custom styles-->
-    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
     <style>
         body {
             background-image: url("../assets/Images/bg.jpg");
@@ -29,8 +27,6 @@
 </head>
 
 <body>
-
-
     <div class="container">
         <div id="navL">
             <h1>Welcome to ITI Cafeteria</h1>
@@ -39,7 +35,6 @@
             <div class="card" style="background-color: brown; border-radius: 7% ; opacity: 85%">
                 <div class="card-header">
                     <h3>Sign In</h3>
-
                 </div>
                 <div class="card-body">
                     <form action="../controllers/loginControler.php" method="POST">
@@ -48,7 +43,6 @@
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
                             <input type="text" class="form-control" name="email" require placeholder="Email">
-
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">

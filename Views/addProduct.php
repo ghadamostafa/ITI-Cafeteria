@@ -20,7 +20,6 @@
             margin-top: 50px;
             padding-left: 20px;
             padding-right: 30px;
-            /* text-align: center; */
             background-color: brown;
             border-radius: 7%;
             opacity: 80%
@@ -37,7 +36,6 @@
     <?php
     include 'adminNavBar.php';
     ?>
-
     <form action="../Controllers/addProductController.php" method="POST" enctype="multipart/form-data">
         <h1 style="text-align: center">Add Product </h1>
         <div class="form-group row">
@@ -56,18 +54,17 @@
             <div class="row">
                 <label class="col-form-label col-sm-2 pt-0">Catogery</label>
                 <select class="custom-select" name="category_id" style="width: 50%; margin-left: 15px;">
-                    <option  selected>Open this select menu</option>
+                    <option selected>Open this select menu</option>
                     <?php
-                        include '../Models/dbConnection.php';
-                        $result = mysqli_query($connect, "select * from category ");
-                        if ($result) {
-                            var_dump($result);
-                            while ($row = mysqli_fetch_assoc($result)) {
-                            
-                               echo " <option value='{$row['category_id']}'>{$row['category_name']}</option>";
-                            }
+                    include '../Models/dbConnection.php';
+                    $result = mysqli_query($connect, "select * from category ");
+                    if ($result) {
+                        var_dump($result);
+                        while ($row = mysqli_fetch_assoc($result)) {
 
+                            echo " <option value='{$row['category_id']}'>{$row['category_name']}</option>";
                         }
+                    }
                     ?>
                 </select>
                 <a href="addCatogery.php" style="margin-left:20px; color:blanchedalmond"> Add Category</a>

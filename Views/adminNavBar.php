@@ -63,6 +63,5 @@
             </ul>
         </div>
     </nav>
-    <!--/.Navbar -->
 </body>
 </html>

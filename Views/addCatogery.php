@@ -13,14 +13,12 @@
             background-repeat: no-repeat;
             background-size: 100%;
         }
-
         form {
             width: 600px;
             margin: 0 auto;
             margin-top: 50px;
             padding-left: 20px;
             padding-right: 30px;
-            /* text-align: center; */
             background-color: brown;
             border-radius: 7%;
             opacity: 80%
@@ -32,8 +30,6 @@
         }
     </style>
 </head>
-<!-- category_name category_id -->
-
 
 <body>
     <?php
@@ -49,7 +45,6 @@
             echo "Enter catrgory";
         }
     }
-
     ?>
     <form action="#" method="POST" enctype="multipart/form-data">
         <h1 style="text-align: center">Add Catogery </h1>
@@ -73,7 +68,6 @@
 <script scr="../assets/js/popper.js"></script>
 <script src="../assets/js/Orders.js"></script>
 <script src="../assets/js/JQuery-3.3.1.min.js"></script>
-
 <?php
 include 'layout/bootstrap.php';
 ?>

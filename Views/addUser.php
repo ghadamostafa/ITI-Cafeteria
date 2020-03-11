@@ -8,9 +8,6 @@
     <title></title>
     <link href="../assets/css/bootstrap.css" rel="stylesheet" />
     <link href="../assets/css/font-awesome.css" rel="stylesheet" />
-    <!--Custom styles-->
-    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
-
     <style>
         body {
             background-image: url("../assets/images/bg.jpg");
@@ -19,9 +16,7 @@
         }
     </style>
 </head>
-
 <body>
-   
     <?php
     include 'adminNavBar.php';
     ?>
