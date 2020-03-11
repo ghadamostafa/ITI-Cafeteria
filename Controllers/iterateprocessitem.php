@@ -15,7 +15,7 @@
       while ($row2 = mysqli_fetch_assoc($result2)) { // var_dump($row2);echo '<hr>'; 
     ?>
         <tr>
-          <td><img style="width:100px;height:100px;" class="card-img-top" src="../assets/images/<?php echo $row2['product_image']; ?>" alt="Card image cap">
+          <td><img style="width:100px;height:100px;" class="card-img-top" src="<?php echo $row2['product_image']; ?>" alt="Card image cap">
           </td>
           <td><?php echo $row2['product_name']; ?></td>
           <td><?php echo $row2['price']; ?></td>

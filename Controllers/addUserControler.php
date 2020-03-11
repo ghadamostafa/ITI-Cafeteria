@@ -28,8 +28,9 @@ include '../Models/dbConnection.php';
                 if (move_uploaded_file($_FILES['photo']['tmp_name'], $dir_to_upload)) {
                     $result = mysqli_query($connect, "insert into users set name='$name',email='$email',password='$password' ,room_no='$room_no',ext='$ext',image='$dir_to_upload'");
                     if ($result) {
-                        header("Location:../Views/login.php");
+                        header("Location:../Views/users.php");
                     } else {
+                        header("Location:../Views/users.php");
                         echo "Result false";
                     }
                 } else {

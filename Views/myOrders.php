@@ -18,6 +18,9 @@
     </style>
 </head>
 <body>
+    <?php
+    include 'userNavBar.php';
+    ?>
     <section class="container">
         <h1>My Orders</h1>
         <form action="">
@@ -35,7 +38,7 @@
     </section>
     <section class="container">
         <table class="table">
-            <thead class="thead-dark">
+            <thead class="thead" style="background-color: brown; color:white" >
                 <tr>
                     <th scope="col">Order Date</th>
                     <th scope="col">Status</th>
@@ -134,4 +137,5 @@
 <script scr="../assets/js/bootstrap.min.js"></script>
 <script scr="../assets/js/popper.js"></script>
 <script src="../assets/js/Orders.js"></script>
+
 </html>

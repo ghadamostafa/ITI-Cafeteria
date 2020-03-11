@@ -10,9 +10,9 @@ if ($result) {
 ?>
         <div class="myproduct col-12 col-md-6 col-lg-4">
             <div class="card">
-                <img class="card-img-top" src="../assets/images/<?php echo $product_image; ?>" alt="Card image cap">
+                <img class="card-img-top" src="<?php echo $product_image; ?>" alt="Card image cap">
                 <div class="card-body">
-                    <h4 class="card-title"><a href="product.html" title="View Product"><?php echo $product_name; ?></a></h4>
+                    <h4 class="card-title"><?php echo $product_name; ?></h4>
                     <div class="row">
                         <div class="col">
                             <p class="btn btn-danger btn-block"><?php echo $product_price; ?>$</p>
