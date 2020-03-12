@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/font-awesome.css">
     <style>
+        body {
+            background-image: url("../assets/Images/bg.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            color: white;
+        }
+
         .order-spread {
             display: none;
         }
@@ -19,12 +26,6 @@
         .display-none {
             display: none;
         }
-        body {
-            background-image: url("../assets/Images/bg.jpg");
-            background-repeat: no-repeat;
-            background-size: 100%;
-            color: white;
-        }
     </style>
 </head>
 
@@ -32,7 +33,6 @@
     <?php
     include 'userNavBar.php';
     ?>
-    <body>
         <section class="container">
             <h1>My Orders</h1>
             <!--        Start of Date Picker-->
@@ -47,14 +47,15 @@
                         <input type="date" class="form-control end" name="end" />
                     </div>
                     <div class="col-2 mt-4 p-2">
-                        <input type="submit" value="Show" name="showOrders" class="btn  btn-block" style="background-color: brown;">
+                    <input type="submit" value="Show" name="showOrders" class="btn btn-block" style="background-color: brown;">
                     </div>
 
                 </div>
             </form>
         </section>
+        <!--        End of Date Picker-->
         <section class="container">
-            <table class="table" style="background-color:white" >
+        <table class="table" style="background-color:white" >
                 <thead class="thead" style="background-color: brown;">
                     <tr>
                         <th scope="col">Order Date</th>
@@ -65,6 +66,9 @@
                 </thead>
                 <tbody>
                     <?php
+
+
+
                     if (isset($_POST["showOrders"])) {
                         require("../Models/dbConnection.php");
                         require("../Controllers/ordersController.php");
@@ -88,10 +92,18 @@
                                     if (strtolower($row["status"]) == "processing") {
                                     ?>
                                         <button id="<?php echo $row["order_id"]; ?>" class="btn btn-danger cancel">CANCEL</button>
+
                                     <?php
                                     } ?>
+
+
+
+
                                 </td>
                             </tr>
+                            <!-- ! Row 1 Spread -->
+
+                            <!-- ! End of Row 1 Spread -->
                     <?php
                         }
                     } ?>

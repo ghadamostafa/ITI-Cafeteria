@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Mar 08, 2020 at 07:50 AM
+-- Generation Time: Mar 12, 2020 at 10:32 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.12
 
@@ -33,14 +33,15 @@ CREATE TABLE IF NOT EXISTS `category` (
   `category_id` smallint(5) NOT NULL AUTO_INCREMENT,
   `category_name` varchar(50) NOT NULL,
   PRIMARY KEY (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`category_id`, `category_name`) VALUES
-(1, 'hot drinks');
+(1, 'hot drinks'),
+(2, 'cold drinks');
 
 -- --------------------------------------------------------
 
@@ -58,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `order_room` varchar(100) NOT NULL,
   PRIMARY KEY (`order_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `orders`
@@ -66,10 +67,8 @@ CREATE TABLE IF NOT EXISTS `orders` (
 
 INSERT INTO `orders` (`order_id`, `date`, `user_id`, `status`, `notes`, `order_room`) VALUES
 (1, '2020-03-07 18:30:37', 1, 'processing', '', '10'),
-(2, '2019-12-16 18:32:17', 2, 'processing', '', '11'),
 (3, '2019-04-02 19:09:14', 1, 'done', '', '10'),
-(4, '2018-08-07 19:12:07', 2, 'done', '', '20'),
-(5, '2018-12-18 19:13:26', 2, 'done', '', '2');
+(6, '2020-03-07 14:00:00', 1, 'done', '', '12');
 
 -- --------------------------------------------------------
 
@@ -93,8 +92,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_name`, `price`, `category_id`, `product_image`) VALUES
-(1, 'black Tea', 10, 1, 'blackTea.jpg'),
-(2, 'cofee', 20, 1, 'coffee.jpg');
+(2, 'cofee', 80, 1, 'coffee.jpg');
 
 -- --------------------------------------------------------
 
@@ -116,11 +114,8 @@ CREATE TABLE IF NOT EXISTS `products_orders` (
 --
 
 INSERT INTO `products_orders` (`product_id`, `order_id`, `Quantity`) VALUES
-(1, 1, 1),
-(1, 2, 1),
-(1, 3, 2),
 (2, 1, 1),
-(2, 4, 3);
+(2, 6, 1);
 
 -- --------------------------------------------------------
 
@@ -138,16 +133,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `ext` int(10) NOT NULL,
   `image` varchar(150) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `room_no`, `ext`, `image`) VALUES
-(1, 'ghada', 'ghada@gmail.com', '123', 10, 1012, 'photo1.jpg'),
-(2, 'fatma', 'fatma@gmail.com', '123', 1011, 1012, 'photo2.jpg'),
-(3, 'Mariam', 'mariam@gmail.com', '123', 52, 1025, 'photo3.jpeg');
+(1, 'ghada', 'ghada@gmail.com', '123', 1011, 65, 'photo1.jpg');
 
 --
 -- Constraints for dumped tables
@@ -157,21 +150,21 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `room_no`, `ext`, `
 -- Constraints for table `orders`
 --
 ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `products`
 --
 ALTER TABLE `products`
-  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`),
+  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `products_orders`
 --
 ALTER TABLE `products_orders`
-  ADD CONSTRAINT `products_orders_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`),
-  ADD CONSTRAINT `products_orders_ibfk_2` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`);
+  ADD CONSTRAINT `products_orders_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  ADD CONSTRAINT `products_orders_ibfk_2` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE CASCADE ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

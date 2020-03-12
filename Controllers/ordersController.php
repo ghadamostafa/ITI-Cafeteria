@@ -1,6 +1,6 @@
 <?php
-session_start();
-// echo"entered";
+// session_start();
+// echo $_SESSION['id'];
 function showUserOrders($startDate, $endtDate)
 {
     require("../Models/dbConnection.php");
@@ -32,21 +32,20 @@ if (isset($_POST['orderDate'])) {
     on po.product_id = p.product_id 
     WHERE o.date =("' . $orderDate . '") AND o.user_id =' . $_SESSION['id'];
     $orderDetails = mysqli_query($connect, $sql);
-    // var_dump($orderDetails);
     if ($orderDetails) {
         $data = [];
         while ($row = mysqli_fetch_assoc($orderDetails)) {
-            $data[] = $row;            
+            $data[] = $row;
+            
         }
-        // var_dump($data);
         $myObj = (object) array();
         $myObj->data = $data;
         echo json_encode(array($myObj));
+
     }
 }
 
 if (isset($_POST['deleteID'])) {
-    echo $_POST['deleteID'];
     require("../Models/dbConnection.php");
     $id = $_POST['deleteID'];
     $sql = 'DELETE FROM orders
