@@ -3,7 +3,7 @@
 
 <head>
 	<title>All users</title>
-	<?php require_once("layout/bootstrap.php"); ?>
+	<?php require("bootstrap.php"); ?>
 	<link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
@@ -34,13 +34,14 @@
 			<tbody>
 				<?php
 				while ($row = mysqli_fetch_assoc($users)) {
+				
 				?>
 					<tr>
-						<td class="image"><img src="<?php echo $row['image'] ?>"></td>
-						<th scope="row"><?php echo $row['name']; ?></th>
-						<td><?php echo $row['room_no']; ?></td>
-						<td><?php echo $row['ext']; ?></td>
-						<td style="width: 150px;">
+						<td class="image"><img id="userImg" src="<?php echo $row['image'] ?>"></td>
+						<th scope="row" style="color: black;"><?php echo $row['name']; ?></th>
+						<td style="color: black;"><?php echo $row['room_no']; ?></td>
+						<td style="color: black;"><?php echo $row['ext']; ?></td>
+						<td style="width: 150px;color: black;">
 							<a href="EditUser.php/?id=<?php echo $row['user_id']; ?>">Edit</a><br>
 							<a href="#" id="<?php echo $row['user_id']; ?>" class="deletebtn">Delete</a></td>
 					</tr>

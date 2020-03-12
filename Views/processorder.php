@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
   <script src="../assets/js/JQuery-3.3.1.js"></script>
   <script src="../assets/js/popper.js"></script>
   <script src="../assets/js/bootstrap.js"></script>

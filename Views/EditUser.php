@@ -3,23 +3,13 @@
 
 <head>
     <title>User Edit</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link href="../../assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="../../assets/css/font-awesome.css" rel="stylesheet" />
-    <style>
-        body {
-            background-image: url("../assets/images/bg.jpg");
-            background-repeat: no-repeat;
-            background-size: 100%;
-        }
-    </style>
+   
 </head>
 
 <body>
 	<?php require("../Models/dbConnection.php"); ?>
    	<?php 
+    include 'navEdit.php';
    	if(isset($_GET['id']))
    	{
    	$user=mysqli_query($connect,"select * from users where user_id=".$_GET['id'] );

@@ -87,7 +87,7 @@
 <script src="../assets/js/JQuery-3.3.1.min.js"></script>
 
 <?php
-include 'layout/bootstrap.php';
+include 'bootstrap.php';
 ?>
 
 </html>

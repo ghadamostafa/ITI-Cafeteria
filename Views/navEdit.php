@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html>
-
-<!-- <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title> -->
-    <!-- <link href="../assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="../assets/css/font-awesome.css" rel="stylesheet" /> -->
+<!-- <!DOCTYPE html>
+<html> -->
+    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <script scr="../../assets/js/bootstrap.min.js"></script>
+    <script scr="../../assets/js/popper.js"></script>
+    <script src="../../assets/js/Orders.js"></script>
+    <script src="../../assets/js/JQuery-3.3.1.min.js"></script>
+    <link href="../../assets/css/font-awesome.css" rel="stylesheet" />
     <style>
         body {
-            background-image: url("../assets/Images/bg.jpg");
+            background-image: url("../../assets/Images/bg.jpg");
             background-repeat: no-repeat;
             background-size: 100%;
         }
@@ -57,7 +57,7 @@
                 <li class="nav-item avatar dropdown">
                     <a  href="login.php" class="navbar-brand">Log out</a>
                     <label class="navbar-brand">Admin</label>
-                    <img src="../assets/Images/avatar.jpg" class="rounded-circle z-depth-0" alt="avatar image">
+                    <img src="../../assets/Images/avatar.jpg" class="rounded-circle z-depth-0" alt="avatar image">
                 </li>
                 
             </ul>

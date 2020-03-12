@@ -4,40 +4,20 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
-    <style>
-        body {
-            background-image: url("../assets/Images/bg.jpg");
-            background-repeat: no-repeat;
-            background-size: 100%;
-        }
-        form {
-            width: 600px;
-            margin: 0 auto;
-            margin-top: 50px;
-            padding-left: 20px;
-            padding-right: 30px;
-            background-color: brown;
-            border-radius: 7%;
-            opacity: 80%
-        }
-
-        label {
-            color: black;
-            font-size: 20
-        }
-    </style>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
 </head>
 
 <body>
     <?php
+    include 'navEdit.php';
     require("../Models/dbConnection.php");
-    include 'adminNavBar.php';
     if (isset($_GET['id'])) {
         $products = mysqli_query($connect, "select * from products where product_id=" . $_GET['id']);
-        // var_dump($user) ;
         while ($ProductRow = mysqli_fetch_assoc($products)) {
+            
     ?>
-            <form action="../../Controllers/productsController.php" method="POST" enctype="multipart/form-data">
+            <form action="../../Controllers/productsController.php" method="POST" enctype="multipart/form-data" id="editProductForm">
                 <h1 style="text-align: center">Edit Product </h1>
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Product</label>
@@ -45,6 +25,7 @@
                         <input type="text" class="form-control" name="product_name" value="<?php echo $ProductRow['product_name']; ?>">
                     </div>
                 </div>
+                <input type="hidden" name="productId" value="<?php echo $ProductRow['product_id'];?>">
                 <div class="form-group row">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Price</label>
                     <div class="col-sm-10">
@@ -86,12 +67,6 @@
     } ?>
 </body>
 
-<script scr="../../assets/js/bootstrap.min.js"></script>
-<script scr="../../assets/js/popper.js"></script>
-<script src="../../assets/js/Orders.js"></script>
-<script src="../../assets/js/JQuery-3.3.1.min.js"></script>
-<?php
-include 'layout/bootstrap.php';
-?>
+
 
 </html>

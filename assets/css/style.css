@@ -1,10 +1,10 @@
-img {
+/*img {
   
   margin: 20px;
   display: inline;
   border-radius: 50%;
-  /*position: absolute;*/
-}
+  /*position: absolute;
+}*/
 .row {
   margin: 20px auto;
   text-align: center;
@@ -21,7 +21,7 @@ thead th {
 th,
 td {
   text-align: center;
-  padding-top: 50px !important;
+  /*padding-top: 50px !important;*/
 }
 td {
   font-family: Tahoma;
@@ -32,9 +32,10 @@ td {
   font-family: Arial;
   color: #660033;
 }
-.image {
-  width: 200px;
-  padding-top: 10px !important;
+#userImg {
+  width: 100px;
+  border-radius: 50%;
+  /*padding-top: 10px !important;*/
 }
 #addUser {
   margin: 10px;
@@ -43,9 +44,23 @@ td {
   right: 280px;
   text-decoration: underline;
 }
-body {
+#editProductForm {
+            width: 600px;
+            margin: 0 auto;
+            margin-top: 50px;
+            padding-left: 20px;
+            padding-right: 30px;
+            background-color: brown;
+            border-radius: 7%;
+            opacity: 80%
+ }
+label {
+  color: black;
+  font-size: 20
+}
+/*body {
     background-image: url("../Images/bg.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     color: white;
-}
+}*/
