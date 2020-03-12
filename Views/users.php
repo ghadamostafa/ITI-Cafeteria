@@ -20,8 +20,8 @@
 		<a href="addUser.php">Add User</a>
 	</div>
 	<div>
-		<table class="table table-sm " style="background-color: brown;">
-			<thead>
+		<table class="table table-sm " style="background-color: white;">
+			<thead style="background-color: brown;">
 				<tr>
 					<th scope="col" class="image">Image</th>
 					<th scope="col">Name</th>

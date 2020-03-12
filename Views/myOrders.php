@@ -15,127 +15,94 @@
         .display-block {
             display: block;
         }
+
+        .display-none {
+            display: none;
+        }
+        body {
+            background-image: url("../assets/Images/bg.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            color: white;
+        }
     </style>
 </head>
+
 <body>
     <?php
     include 'userNavBar.php';
     ?>
-    <section class="container">
-        <h1>My Orders</h1>
-        <form action="">
-            <div class="row">
-                <div class="from-group col-6">
-                    <label for="start">Date from:</label>
-                    <input type="date" class="form-control start" name="start" />
+    <body>
+        <section class="container">
+            <h1>My Orders</h1>
+            <!--        Start of Date Picker-->
+            <form action="" method="POST">
+                <div class="row">
+                    <div class="from-group col-5">
+                        <label for="start">Date from:</label>
+                        <input type="date" class="form-control start" name="start" />
+                    </div>
+                    <div class="form-group col-5">
+                        <label for="end">Date to:</label>
+                        <input type="date" class="form-control end" name="end" />
+                    </div>
+                    <div class="col-2 mt-4 p-2">
+                        <input type="submit" value="Show" name="showOrders" class="btn  btn-block" style="background-color: brown;">
+                    </div>
+
                 </div>
-                <div class="form-group col-6">
-                    <label for="end">Date to:</label>
-                    <input type="date" class="form-control end" name="end" />
-                </div>
-            </div>
-        </form>
-    </section>
-    <section class="container">
-        <table class="table">
-            <thead class="thead" style="background-color: brown; color:white" >
-                <tr>
-                    <th scope="col">Order Date</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Amount</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="order-row">
-                    <td>
-                        <span>2015/02/02 10.30 AM</span>
-                        <i class="fa fa-plus"></i>
-                    </td>
-                    <td>Processing</td>
-                    <td><span>55</span> EGP</td>
-                    <td><button class="btn btn-danger">CANCEL</button></td>
-                </tr>
-                <!-- ! Row 1 Spread -->
-                <tr class="order-spread">
-                    <td>
-                        <div class="row">
-                            <!-- Item -->
-                            <div class="col-3">
-                                <div>
-                                    <img src="../assets/Images/cup.png" width="100px" height="100px" alt="">
-                                    <p>Tea</p>
-                                    <span>5 LE</span>
-                                    <span>2</span>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="row">
-                            <!-- Item -->
-                            <div class="col-3">
-                                <div>
-                                    <img src="../assets/Images/cup.png" width="100px" height="100px" alt="">
-                                    <p>Tea</p>
-                                    <span>5 LE</span>
-                                    <span>2</span>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="row">
-                            <!-- Item -->
-                            <div class="col-3">
-                                <div>
-                                    <img src="../assets/Images/cup.png" width="100px" height="100px" alt="">
-                                    <p>Tea</p>
-                                    <span>5 LE</span>
-                                    <span>2</span>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="row">
-                            <!-- Item -->
-                            <div class="col-3">
-                                <div>
-                                    <img src="../assets/Images/cup.png" width="100px" height="100px" alt="">
-                                    <p>Tea</p>
-                                    <span>5 LE</span>
-                                    <span>2</span>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>2015/02/01 10.30 AM</span>
-                        <i class="fa fa-plus"></i>
-                    </td>
-                    <td>Out for delivery</td>
-                    <td><span>20</span> EGP</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>2015/01/01 10.35 AM</span>
-                        <i class="fa fa-minus"></i>
-                    </td>
-                    <td>Done</td>
-                    <td><span>29</span> EGP</td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-</body>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script scr="../assets/js/bootstrap.min.js"></script>
-<script scr="../assets/js/popper.js"></script>
-<script src="../assets/js/Orders.js"></script>
+            </form>
+        </section>
+        <section class="container">
+            <table class="table" style="background-color:white" >
+                <thead class="thead" style="background-color: brown;">
+                    <tr>
+                        <th scope="col">Order Date</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    if (isset($_POST["showOrders"])) {
+                        require("../Models/dbConnection.php");
+                        require("../Controllers/ordersController.php");
+                        $startDate = $_POST["start"];
+                        $endtDate = $_POST["end"];
+                        $userOrders = showUserOrders($startDate, $endtDate);
+                        // var_dump($userOrders);
+
+                        while ($row = mysqli_fetch_assoc($userOrders)) {
+                    ?>
+                            <tr class="order-row">
+                                <td>
+                                    <span><?php echo $row["date"]; ?></span>
+                                    <i class="fa fa-plus"></i>
+                                </td>
+                                <td><?php echo $row["status"]; ?></td>
+                                <td><span><?php echo $row["amount"]; ?></span> EGP</td>
+                                <!-- <span hidden class="orderID"><?php echo $row["order_id"]; ?></span> -->
+                                <td>
+                                    <?php
+                                    if (strtolower($row["status"]) == "processing") {
+                                    ?>
+                                        <button id="<?php echo $row["order_id"]; ?>" class="btn btn-danger cancel">CANCEL</button>
+                                    <?php
+                                    } ?>
+                                </td>
+                            </tr>
+                    <?php
+                        }
+                    } ?>
+                </tbody>
+            </table>
+        </section>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- <script scr="../assets/js/JQuery-3.3.1.min.js"></script> -->
+    <script scr="../assets/js/bootstrap.min.js"></script>
+    <script scr="../assets/js/popper.js"></script>
+    <script src="../assets/js/Orders.js"></script>
 
 </html>
