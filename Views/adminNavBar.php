@@ -34,6 +34,8 @@ if (!isset($_SESSION['id'])) {
     header("Location:login.php");
 }
 ?>
+<?php //include '../Models/sessioncheck.php';?>
+
 
 <body>
     <!--Navbar -->

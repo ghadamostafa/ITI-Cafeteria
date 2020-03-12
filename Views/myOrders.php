@@ -32,6 +32,7 @@
     <?php
     include 'userNavBar.php';
     ?>
+
     <body>
         <section class="container">
             <h1>My Orders</h1>
@@ -64,7 +65,10 @@
                     </tr>
                 </thead>
                 <tbody>
+                
                     <?php
+                        include '../Models/sessioncheck.php';
+
                     if (isset($_POST["showOrders"])) {
                         require("../Models/dbConnection.php");
                         require("../Controllers/ordersController.php");
