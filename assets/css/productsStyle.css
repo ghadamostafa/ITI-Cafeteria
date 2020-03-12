@@ -1,0 +1,50 @@
+#productImg {
+  width: 250px;
+  height: 250px;
+  margin: 20px;
+  display:  inline-block;
+  border-radius: 20px;
+}
+.row {
+  margin: 20px auto;
+  text-align: center;
+}
+table {
+  width: 60% !important;
+  margin: 0 auto;
+  padding: 10px;
+}
+thead th {
+  color: #cc6699;
+  padding: 10px !important;
+}
+tbody th {
+  color: #391326;
+}
+th,
+td {
+  text-align: center;
+}
+td {
+  font-family: Tahoma;
+}
+#headerDiv {
+  text-align: center;
+  margin: 40px;
+  font-family: Arial;
+  color: #660033;
+}
+
+#addProduct {
+  margin: 10px;
+  position: relative;
+  text-align: right;
+  right: 280px;
+  text-decoration: underline;
+}
+body {
+	background-image: url("../Images/bg.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	/* color: white; */
+}

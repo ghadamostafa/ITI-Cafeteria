@@ -1,5 +1,4 @@
 <?php
-
 // DB connection
 include '../Models/dbConnection.php';
     if (isset($_POST["done"])) {
@@ -11,8 +10,6 @@ include '../Models/dbConnection.php';
             $category_id=$_POST["category_id"];
             $result = "";
             var_dump($_POST);
-            echo "*************";
-            // var_dump($_FILES);
             var_dump($_FILES['photo']['tmp_name']);
             if (!empty($_FILES['photo']['tmp_name'])) {
                 $dir_to_upload = "../assets/images/";
@@ -20,20 +17,19 @@ include '../Models/dbConnection.php';
                 if (move_uploaded_file($_FILES['photo']['tmp_name'], $dir_to_upload)) {
                     $result = mysqli_query($connect, "insert into products set product_name='$product_name',price='$price',category_id='$category_id',product_image='$dir_to_upload'");
                     if ($result) {
-                        header("Location:../Views/login.php");
+                        header("Location:../Views/products.php");
                     } else {
-                        echo "BBBBBBBBBaddddddddd";
+                        echo "Result false";
                     }
                 } else {
-                    // var_dump($_FILES['image']['tmp_name']);
-                    echo "BBBBBBBBBaddddddddd222222222222";
+                    echo "Add picture";
                 }
             } else {
-                echo "heeeeeeeeeere";
+                echo "Pic Error";
             }
         } else {
 
-            header("Location:../Views/addUser.php");
+            header("Location:../Views/products.php");
             echo "Must Enter All Fields";
         }
     } 

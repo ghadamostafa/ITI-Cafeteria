@@ -1,12 +1,8 @@
 <?php
 // DB connection
 include '../Models/dbConnection.php';
-    if (isset($_POST["done"])) {
-        if (
-            !empty($_POST["name"]) && !empty($_POST["email"]) && !empty($_POST["password"])
-            && !empty($_POST["rePassword"]) && !empty($_POST["room_no"])
-            && !empty($_POST["ext"]))
-         {
+    if (isset($_POST["done"])) 
+    {
             $name = mysqli_escape_string($connect, $_POST['name']);
             $password = mysqli_escape_string($connect, $_POST['password']);
             $email = mysqli_escape_string($connect, $_POST['email']);
@@ -21,27 +17,38 @@ include '../Models/dbConnection.php';
             $rePassword = trim($rePassword);
             $ext = trim($ext);
             $result = "";
-            var_dump($_FILES['photo']['tmp_name']);
             if (!empty($_FILES['photo']['tmp_name'])) {
                 $dir_to_upload = "../assets/Images/";
                 $dir_to_upload = $dir_to_upload . basename($_FILES['photo']['name']);
                 if (move_uploaded_file($_FILES['photo']['tmp_name'], $dir_to_upload)) {
-                    $result = mysqli_query($connect, "insert into users set name='$name',email='$email',password='$password' ,room_no='$room_no',ext='$ext',image='$dir_to_upload'");
+                    $query="update users set name='$name',email='$email',password='$password' ,room_no='$room_no',ext='$ext',image='$dir_to_upload'where user_id=".$_POST['userId'];
+                    $result = mysqli_query($connect,$query);
                     if ($result) {
                         header("Location:../Views/users.php");
+
                     } else {
-                        header("Location:../Views/users.php");
                         echo "Result false";
                     }
                 } else {
                     echo "Add picture";
                 }
             } else {
-                echo "Pic Error";
+                    $query="update users set name='$name',email='$email',password='$password' ,room_no='$room_no',ext='$ext' where user_id=".$_POST['userId'];
+                    $result = mysqli_query($connect,$query);
+                    if ($result) {
+                        echo "updated successfully";
+                        header("Location:../Views/users.php");
+                    } else {
+                        echo "Result false";
+                    }
             }
-        } else {
-
-            header("Location:../Views/addUser.php");
-            echo "Must Enter All Fields";
+    }
+    elseif (isset($_POST["userID"])) {
+        $query="delete from users where user_id=".$_POST["userID"];
+        $result = mysqli_query($connect,$query);
+        if($result)
+        {
+            echo "success";
         }
+        
     }
