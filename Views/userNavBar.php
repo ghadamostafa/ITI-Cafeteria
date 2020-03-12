@@ -49,16 +49,20 @@
                     // DB connection
                     include '../Models/dbConnection.php';
                     session_start();
-                    $result = mysqli_query($connect, "select * from users where user_id={$_SESSION['id']}");
-                    if ($result) {
-                        $result = mysqli_fetch_assoc($result);
-                        $path = $result['image'];
-                        $name=$result['name'];
-                       echo "<label class='navbar-brand'>$name</label>";
-                        echo "<img src='$path' class='rounded-circle z-depth-0' alt='avatar image'>";
+                    if (!isset($_SESSION['id'])) {
+                        header("Location:login.php");
+                    } else {
+                        $result = mysqli_query($connect, "select * from users where user_id={$_SESSION['id']}");
+                        if ($result) {
+                            $result = mysqli_fetch_assoc($result);
+                            $path = $result['image'];
+                            $name = $result['name'];
+                            echo "<label class='navbar-brand'>$name</label>";
+                            echo "<img src='$path' class='rounded-circle z-depth-0' alt='avatar image'>";
+                        }
                     }
                     ?>
-                    
+
                 </li>
             </ul>
         </div>

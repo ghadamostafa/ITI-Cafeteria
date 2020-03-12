@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<!-- <head>
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title> -->
     <!-- <link href="../assets/css/bootstrap.css" rel="stylesheet" />
@@ -12,6 +12,7 @@
             background-repeat: no-repeat;
             background-size: 100%;
         }
+
         nav {
             background-color: brown;
             height: 80px;
@@ -26,10 +27,17 @@
             size: 24;
         }
     </style>
-<!-- </head> -->
+</head>
+<?php
+session_start();
+if (!isset($_SESSION['id'])) {
+    header("Location:login.php");
+}
+?>
 
-<!-- <body> -->
+<body>
     <!--Navbar -->
+
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
         <a class="navbar-brand" href="#">Cafeterai</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555" aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,13 +63,13 @@
             </ul>
             <ul class="navbar-nav ml-auto nav-flex-icons">
                 <li class="nav-item avatar dropdown">
-                    <a  href="login.php" class="navbar-brand">Log out</a>
+                    <a href="login.php" class="navbar-brand">Log out</a>
                     <label class="navbar-brand">Admin</label>
                     <img src="../assets/Images/avatar.jpg" class="rounded-circle z-depth-0" alt="avatar image">
                 </li>
-                
+
             </ul>
         </div>
     </nav>
-<!-- </body>
+    <!-- </body>
 </html> -->

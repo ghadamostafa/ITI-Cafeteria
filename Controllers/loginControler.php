@@ -8,7 +8,9 @@ if (!empty($_POST["email"]) && !empty($_POST["password"])) {
     $email = trim($email);
     $password = trim($password);
     if ($email == 'shimaa@s.com' && $password == 123) {
-        header("Location:../Views/processorder.php");
+        session_start();
+        $_SESSION['id'] = 7777;
+        header("Location:../Views/processorder.php");  
     } else {
         $result = mysqli_query($connect, "select * FROM users WHERE email='$email' and password='$password'");
         if ($result) {
