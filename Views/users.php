@@ -10,18 +10,19 @@
 <body>
 	<?php
 	require_once("../Models/dbConnection.php");
-	$users = mysqli_query($connect, "select * from users"); 
-    include 'adminNavBar.php';
-    ?>
+	$users = mysqli_query($connect, "select * from users");
+	include 'adminNavBar.php';
+	?>
 	<div id="headerDiv">
 		<h2>All Users</h2>
 	</div>
-	<div id="addUser">
-		<a href="addUser.php">Add User</a>
+	<div id="addUser" >
+		<a href="addUser.php" style="color:white; font-size:28px">Add User</a>
 	</div>
 	<div>
 		<table class="table table-sm " style="background-color: white;">
 			<thead style="background-color: brown;">
+
 				<tr>
 					<th scope="col" class="image">Image</th>
 					<th scope="col">Name</th>
@@ -40,13 +41,15 @@
 						<td><?php echo $row['room_no']; ?></td>
 						<td><?php echo $row['ext']; ?></td>
 						<td style="width: 150px;">
-							<a href="#">Edit</a><br>
-							<a href="#">Delete</a></td>
+							<a href="EditUser.php/?id=<?php echo $row['user_id']; ?>">Edit</a><br>
+							<a href="#" id="<?php echo $row['user_id']; ?>" class="deletebtn">Delete</a></td>
 					</tr>
 				<?php } ?>
+
 			</tbody>
 		</table>
 	</div>
+	<script type="text/javascript" src="../assets/js/deleteUser.js"></script>
 </body>
 
 </html>

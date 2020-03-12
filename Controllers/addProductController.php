@@ -17,7 +17,7 @@ include '../Models/dbConnection.php';
                 if (move_uploaded_file($_FILES['photo']['tmp_name'], $dir_to_upload)) {
                     $result = mysqli_query($connect, "insert into products set product_name='$product_name',price='$price',category_id='$category_id',product_image='$dir_to_upload'");
                     if ($result) {
-                        header("Location:../Views/login.php");
+                        header("Location:../Views/products.php");
                     } else {
                         echo "Result false";
                     }
@@ -29,7 +29,7 @@ include '../Models/dbConnection.php';
             }
         } else {
 
-            header("Location:../Views/addUser.php");
+            header("Location:../Views/products.php");
             echo "Must Enter All Fields";
         }
     } 

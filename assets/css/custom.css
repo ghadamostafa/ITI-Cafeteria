@@ -6,16 +6,18 @@ body {
 }
 
   .comments-main {
-    background: #FFF;
+    background: brown;
+    opacity: 90%;
+    height: auto;
   }
 
-  .comment time,
+  /* .comment time,
   .comment:hover time,
   .icon-rocknroll,
-  .like-count {
-    -webkit-transition: .25s opacity linear;
-    transition: .25s opacity linear;
-  }
+  .like-count { */
+    /* -webkit-transition: .25s opacity linear;
+    transition: .25s opacity linear; */
+  /* } */
 
   .comments-main ul li {
     list-style: none;
@@ -23,7 +25,7 @@ body {
 
   .comments .comment {
     padding: 5px 10px;
-    background: #00AF90;
+    /* background: #404040; */
   }
 
   .comments .comment:hover time {
@@ -92,7 +94,7 @@ body {
   }
 
   .comment-box-main {
-    background: #CA1D5F;
+    background: brown;
   }
 
   @media (min-width: 320px) and (max-width: 480px) {

@@ -18,7 +18,7 @@ if (!empty($_POST["email"]) && !empty($_POST["password"])) {
                 session_start();
                 $_SESSION['name'] = $res[1];
                 $_SESSION['id'] = $res[0];
-                header("Location:../Views/myOrders.php");
+                header("Location:../Views/myorder.php");
             } else {
                 header("Location:../Views/login.php");
             }

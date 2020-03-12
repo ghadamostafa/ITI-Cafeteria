@@ -36,7 +36,7 @@
                     <a class="nav-link" href="processorder.php">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="addProduct.php">Products</a>
+                    <a class="nav-link" href="products.php">Products</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="users.php">Users </a>
