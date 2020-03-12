@@ -15,7 +15,6 @@
             background-size: 100%;
             color: white;
         }
-
         #navL {
             background-color: brown;
             height: 80px;
