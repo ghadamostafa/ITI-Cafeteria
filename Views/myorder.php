@@ -91,7 +91,7 @@
                         <?php
                         // DB connection
                         include '../Models/dbConnection.php';
-                        $result = mysqli_query($connect, "select * from users ");
+                        $result = mysqli_query($connect, "select DISTINCT room_no from users ");
                         while ($row = mysqli_fetch_assoc($result)) {
                            echo "<option>{$row['room_no']}</option>";
                         }

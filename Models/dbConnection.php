@@ -1,7 +1,5 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "", "iti_cafeteria");
-
-
+$connect = mysqli_connect("localhost", "root", "", "cafeteria");
 if(! $connect)
 	{
 		echo "cann't connect";
