@@ -33,7 +33,7 @@ orderRow.on("click", function () {
                 <div class="row ">
                     <div class="col-3">
                         <div>
-                            <img src="../assets/Images/${element.product_image}" width="100px" height="100px" alt="">
+                            <img src="${element.product_image}" width="100px" height="100px" alt="">
                             <p>${element.product_name}</p>
                             <span>${element.price} LE</span>
                             <span>${element.Quantity}</span>
