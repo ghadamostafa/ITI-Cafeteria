@@ -11,7 +11,12 @@
     include '../Models/dbConnection.php';
     var_dump($_POST);
     if (isset($_POST["orders"])) {
-        $user_id = 1;
+        session_start();
+if(!isset($_SESSION['id'] ))
+{
+    exit;
+}
+        $user_id = $_SESSION['id'] ;
         echo  'INSERT INTO `orders`( `date`, `user_id`, `status`, `notes`, `order_room`) VALUES (NOW(),' . $user_id . ',\'process\',\'' . $_POST['order_comment'] . '\',\'' . $_POST['order_place'] . '\')';
         if ($connect) {
             if ($connect) {
@@ -32,7 +37,16 @@
                     if ($result) {
                         echo $result;
                         echo '<hr>';
+                        if($result==1)
+                        {
+                            header("Location:../Views/myorder.php?done=1");
+
+
+                        }else{
+                            header("Location:../Views/myorder.php?err=1");
+                        }
                     } else {
+                        
                         echo 'eror in order details ';
                         echo '<hr>';
                         echo 'INSERT INTO `products_orders`(`product_id`,`order_id`, `Quantity`) VALUES ' . $values;

@@ -9,12 +9,54 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/font-awesome.css">
     <link rel="stylesheet" href="../assets/css/orderStyle.css">
-</head>
 
+    
+</head>
+    
 <body>
     <?php
     include 'userNavBar.php';
     ?>
+    <?php
+    
+    if (isset($_GET)){
+        if(!empty($_GET['done']))
+        {
+            if($_GET['done']==1)
+            {?>
+               <div class="alert  alert-dismissible fade show alert-success" role="alert">
+                <strong><?php echo $_SESSION['name'];?>  !</strong> Your Order Has been Sent To Admin And  In Processing  Now 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+        <?php    }
+        }
+    }
+    ?>
+      
+                <!--  -->
+    
+                <?php
+    
+    if (isset($_GET)){
+        if(!empty($_GET['err']))
+              {
+                   if($_GET['err']==1)
+            {?>
+                    <div class="alert  alert-dismissible fade show alert-warning" role="alert">
+                    <strong><?php echo $_SESSION['name'];?>  !</strong> Your Order Has NOT been Sent To Admin PLZ  Order Again
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+        <?php   }
+        }
+    }
+    ?>
+    
+
+
     <div class="container" style="margin-top: 45px">
         <div class="row">
             <div class="col-12 col-sm-3">
@@ -29,7 +71,7 @@
                                 <td class="tprice">0</td style="margin-left: 15px;">
                             </tr>
                         </table>
-                        <table style="text-align: center;">
+                        <table  style="border:2px solid black; text-align: center;">
                             <th>name</th>
                             <th>Q</th>
                             <th>U_price</th>
@@ -42,6 +84,7 @@
                         </table>
                         <hr>
                         <h1>Total Price: <p id="totalprice" class="bloc_left_price">0</p>
+                  
                         </h1>
                         <lable>Place :</lable>
                         <select name="order_place" id="">

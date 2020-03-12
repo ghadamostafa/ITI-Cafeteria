@@ -16,7 +16,26 @@
 <body>
   <?php
   include 'adminNavBar.php';
+  if (isset($_GET)){
+    if(!empty($_GET['done']))
+    {if($_GET['done']==1)
+      {
   ?>
+
+
+
+            
+               <div class="alert  alert-dismissible fade show alert-success" role="alert">
+                <strong>MS/Shimaa  !</strong> the order has been confirmed 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+        <?php    }
+        }
+    }
+    ?>  
+
   <div class="container">
     <?php include '../Controllers/iterateprocess.php'; ?>
   </div>

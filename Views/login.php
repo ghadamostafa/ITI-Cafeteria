@@ -26,6 +26,11 @@
 </head>
 
 <body>
+<?php
+    session_start();
+   session_destroy();
+?>
+
     <div class="container">
         <div id="navL">
             <h1>Welcome to ITI Cafeteria</h1>
