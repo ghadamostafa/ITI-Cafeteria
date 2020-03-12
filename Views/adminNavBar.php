@@ -3,7 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title> -->
+    <title></title> 
     <!-- <link href="../assets/css/bootstrap.css" rel="stylesheet" />
     <link href="../assets/css/font-awesome.css" rel="stylesheet" /> -->
     <style>
@@ -34,9 +34,6 @@ if (!isset($_SESSION['id'])) {
     header("Location:login.php");
 }
 ?>
-<?php //include '../Models/sessioncheck.php';?>
-
-
 <body>
     <!--Navbar -->
 

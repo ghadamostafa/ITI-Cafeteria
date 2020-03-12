@@ -35,8 +35,8 @@ if ($result) {
 						include '../Controllers/iterateprocessitem.php'; ?>
 
 						<div class="col-md-3 col-sm-2 col-2 pl-0 text-center send-btn">
-							<a href="../Controllers/confirmorder.php?id=<?php echo $order_id;?>"><button class="btn btn-info">CONFIRM</button></a>
-						
+							<a href="../Controllers/confirmorder.php?id=<?php echo $order_id; ?>"><button class="btn btn-info">CONFIRM</button></a>
+
 						</div>
 					</div>
 				</div>
