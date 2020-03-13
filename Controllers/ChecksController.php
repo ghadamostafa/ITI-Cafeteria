@@ -61,7 +61,7 @@ else if (isset($_POST['userId']) && isset($_POST['date'])) {
 else if(isset($_POST['userId'])&& empty($_POST['date']) && empty($_POST['selectedDate']))
 {
 	session_start();
-	$query="SELECT date,sum(po.Quantity*products.price) as Amount from orders INNER JOIN products_orders po INNER JOIN products on orders.order_id=po.order_id AND po.product_id=products.product_id WHERE user_id=".$_POST['userId']." and date >= '".$_SESSION['fromDate']."' and date <= '".$_SESSION['toDate']."' GROUP by date";
+	$query="SELECT date,sum(po.Quantity*products.price) as Amount from orders INNER JOIN products_orders po INNER JOIN products on orders.order_id=po.order_id AND po.product_id=products.product_id WHERE user_id=".$_POST['userId']." and Date(date) >= '".$_SESSION['fromDate']."' and Date(date) <= '".$_SESSION['toDate']."' GROUP by date";
 	$result=mysqli_query($connect,$query);
 	if($result)
 	{
