@@ -3,6 +3,12 @@
 	margin: 10px 50px;
 	width: 300px;
 }
+body {
+	background-image: url("../Images/bg.jpg");
+	/* background-repeat: no-repeat; */
+	background-size: 100%;
+	/* color: white; */
+}
 
 #wrapper{
 	text-align: left;

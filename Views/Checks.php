@@ -19,8 +19,7 @@
 </head>
 <body>
 	<?php
-	include 'adminNavBar.php' ;
-	// session_start();
+	session_start();
 	require_once("../Models/dbConnection.php");
 	$users=mysqli_query($connect,"select name,user_id from users"); ?>
 <div>
