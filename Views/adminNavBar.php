@@ -7,6 +7,7 @@
         body {
             background-image: url("../assets/Images/bg.jpg");
             background-repeat: no-repeat;
+            background-attachment: fixed;
             background-size: 100%;
         }
 

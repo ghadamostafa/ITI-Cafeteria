@@ -103,7 +103,7 @@
 <?php }}?>
 </div>
 <!-- End outer table -->
-<script type="text/javascript" src="../assets/js/checks.js"></script>
 	
 </body>
+<script type="text/javascript" src="../assets/js/checks.js"></script>
 </html>
