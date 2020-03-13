@@ -26,6 +26,28 @@
         .display-none {
             display: none;
         }
+
+        .order-price {
+            position: absolute;
+            right: -90px;
+            top: -10px;
+            background: #ff4444;
+            border-radius: 50%;
+            text-align: center;
+            color: #fff;
+            font-size: 14px;
+            width: 40px;
+            height: 40px;
+            padding: 10px 0 0 0;
+        }
+        .order-quantity{      
+        background: #f2d900;
+        text-align: center;
+        border-radius: 30px 30px 30px 30px;
+        color: #000;
+        padding: 5px 10px;
+        font-size: 14px;        
+    }
     </style>
 </head>
 
@@ -49,7 +71,7 @@
                         <input type="date" class="form-control end" name="end" />
                     </div>
                     <div class="col-2 mt-4 p-2">
-                    <input type="submit" value="Show" name="showOrders" class="btn btn-block" style="background-color: brown;">
+                        <input type="submit" value="Show" name="showOrders" class="btn btn-block" style="background-color: brown;">
                     </div>
 
                 </div>
@@ -57,7 +79,7 @@
         </section>
         <!--        End of Date Picker-->
         <section class="container">
-        <table class="table" style="background-color:white" >
+            <table class="table" style="background-color:white">
                 <thead class="thead" style="background-color: brown;">
                     <tr>
                         <th scope="col">Order Date</th>
@@ -67,10 +89,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                
+
                     <?php
 
-                        include '../Models/sessioncheck.php';
+                    include '../Models/sessioncheck.php';
 
 
                     if (isset($_POST["showOrders"])) {
