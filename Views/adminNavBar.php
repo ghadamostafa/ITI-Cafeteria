@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
-<head>
+<head> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
@@ -24,9 +24,14 @@
             size: 24;
         }
     </style>
-</head>
-
-<body>
+<!-- </head> -->
+<?php
+session_start();
+if (!isset($_SESSION['id'])) {
+    header("Location: login.php");
+}
+?>
+<!-- <body> -->
     <!--Navbar -->
 
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
@@ -62,5 +67,5 @@
             </ul>
         </div>
     </nav>
-    </body>
-</html>
+ <!--    </body>
+</html> -->

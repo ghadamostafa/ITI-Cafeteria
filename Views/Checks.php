@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Checks</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
 
@@ -19,7 +19,8 @@
 </head>
 <body>
 	<?php
-	session_start();
+	include 'adminNavBar.php' ;
+	// session_start();
 	require_once("../Models/dbConnection.php");
 	$users=mysqli_query($connect,"select name,user_id from users"); ?>
 <div>
