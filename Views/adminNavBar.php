@@ -3,9 +3,6 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <!-- <link href="../assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="../assets/css/font-awesome.css" rel="stylesheet" /> -->
     <style>
         body {
             background-image: url("../assets/Images/bg.jpg");
@@ -28,14 +25,6 @@
         }
     </style>
 </head>
-<?php
-session_start();
-if (!isset($_SESSION['id'])) {
-    header("Location:login.php");
-}
-?>
-<?php //include '../Models/sessioncheck.php';?>
-
 
 <body>
     <!--Navbar -->
@@ -73,5 +62,5 @@ if (!isset($_SESSION['id'])) {
             </ul>
         </div>
     </nav>
-    <!-- </body>
-</html> -->
+    </body>
+</html>

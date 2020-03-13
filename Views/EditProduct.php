@@ -9,9 +9,11 @@
 </head>
 
 <body>
+    
     <?php
-    include 'navEdit.php';
     require("../Models/dbConnection.php");
+    include 'navEdit.php';
+
     if (isset($_GET['id'])) {
         $products = mysqli_query($connect, "select * from products where product_id=" . $_GET['id']);
         while ($ProductRow = mysqli_fetch_assoc($products)) {

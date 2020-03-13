@@ -27,9 +27,13 @@
         }
     </style>
 <!-- </head> -->
-<?php include '../Models/sessioncheck.php';?>
 
-
+<?php
+session_start();
+if (!isset($_SESSION['id'])) {
+    header("Location:login.php");
+}
+?>
 <!-- <body> -->
     <!--Navbar -->
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
@@ -40,16 +44,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="processorder.php">Home</a>
+                    <a class="nav-link" href="../processorder.php">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="products.php">Products</a>
+                    <a class="nav-link" href="../products.php">Products</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="users.php">Users </a>
+                    <a class="nav-link" href="../users.php">Users </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="processorder.php">Manual Orders</a>
+                    <a class="nav-link" href="../processorder.php">Manual Orders</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Checks </a>
