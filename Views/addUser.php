@@ -12,6 +12,7 @@
         body {
             background-image: url("../assets/images/bg.jpg");
             background-repeat: no-repeat;
+            background-attachment: fixed;
             background-size: 100%;
         }
     </style>

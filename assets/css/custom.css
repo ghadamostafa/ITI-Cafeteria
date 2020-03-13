@@ -1,6 +1,6 @@
 body {
     background-image: url("../Images/bg.jpg");
-    background-repeat:repeat-x;
+    /* background-repeat:repeat-x; */
     background-size: 100%;
     color: white;
 }
@@ -10,15 +10,6 @@ body {
     opacity: 90%;
     height: auto;
   }
-
-  /* .comment time,
-  .comment:hover time,
-  .icon-rocknroll,
-  .like-count { */
-    /* -webkit-transition: .25s opacity linear;
-    transition: .25s opacity linear; */
-  /* } */
-
   .comments-main ul li {
     list-style: none;
   }

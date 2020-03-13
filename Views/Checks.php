@@ -18,8 +18,7 @@
 </head>
 <body>
 	<?php
-	include 'adminNavBar.php' ;
-	// session_start();
+	session_start();
 	require_once("../Models/dbConnection.php");
 	$users=mysqli_query($connect,"select name,user_id from users"); ?>
 <div>
@@ -77,8 +76,8 @@
 	if(mysqli_num_rows ( $result ) > 0)
 {?>
 	<div id="tableDiv" style="width: 800px;height: 800px;text-align: center;margin:20px auto;">
-			<table class="table table-sm " >
-			  <thead>
+			<table class="table table-sm " style="background-color: white;" >
+			  <thead style="background-color: brown;">
 			    <tr>		   		
 			      <th scope="col" style="text-align: center;">Name</th>
 			      <th scope="col" style="text-align: center;">Total Amount</th>		      
@@ -103,7 +102,7 @@
 <?php }}?>
 </div>
 <!-- End outer table -->
-<script type="text/javascript" src="../assets/js/checks.js"></script>
 	
 </body>
+<script type="text/javascript" src="../assets/js/checks.js"></script>
 </html>
