@@ -74,7 +74,7 @@
 					</td></tr>`);
 				console.log($(currentRow).parents("tr").next().find("table"));
 				Data[0].data.forEach((element)=>{
-				$(currentRow).parents("tr").next().find("table").append(`	
+				$(currentRow).parents("tr").next().find("table").first().append(`	
 					<tr >
 						<td  style="padding:0;">
 						<table style="width:100%">

@@ -3,7 +3,7 @@ $result=NULL;
 require_once("../Models/dbConnection.php");
 if(isset($_POST['submit_btn']))
 {
-
+	//selection of two dates
 	if(isset($_POST['fromDate']) && isset($_POST['ToDate']) && empty($_POST['user']))
 	{		
 		$fromDate= strtotime( $_POST['fromDate'] );
@@ -20,6 +20,7 @@ if(isset($_POST['submit_btn']))
 		$_SESSION['toDate'] = $ToDate;
 		$result=mysqli_query($connect,$query); 
 	}
+	//selection of user and two dates
 	else if(isset($_POST['fromDate']) && isset($_POST['ToDate']) && isset($_POST['user']))
 	{
 		// session_start();
@@ -29,8 +30,8 @@ if(isset($_POST['submit_btn']))
 		header("location: ../Views/checksOrders.php?id=".$_POST['user']);
 	}
 }
+//selection of date and user ,delievered from checks.php
 else if (isset($_POST['userId']) && isset($_POST['date'])) {
-	// echo "hi";
 	$query="SELECT
     po.Quantity,
     p.price,
@@ -58,6 +59,7 @@ else if (isset($_POST['userId']) && isset($_POST['date'])) {
 		}
 
 }
+//selection of user ,delievered from checks.php
 else if(isset($_POST['userId'])&& empty($_POST['date']) && empty($_POST['selectedDate']))
 {
 	session_start();
@@ -76,9 +78,9 @@ else if(isset($_POST['userId'])&& empty($_POST['date']) && empty($_POST['selecte
 		echo json_encode(array($myObj));
 	}
 }
+//selection of date and user ,delievered from checkOrders.php
 else if(isset($_POST['userId'])&& isset($_POST['selectedDate']))
 {
-	// echo "hi";
 	$sql = 'SELECT p.product_image,p.product_name,p.price,po.Quantity,o.order_id 
     FROM orders o 
     INNER JOIN products_orders po 
