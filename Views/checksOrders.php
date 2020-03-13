@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="../assets/css/checksStyle.css">
 </head>
 <body>
+	<section class="container">
 	<?php
 	session_start();
 	require_once("../Models/dbConnection.php");
@@ -25,9 +26,9 @@
 	{
 	?>
 	<div id="ordersTable">
-		<table class="table table-sm ">
-			  <thead>
-			    <tr>
+		<table class="table table-striped table-light ">
+			  <thead class="bg-danger">
+			    <tr >
 			   		<th scope="col" class="image">Order Date</th>
 			      <th scope="col">Name</th>
 			      <th scope="col">Room</th>
@@ -51,6 +52,7 @@
 			  </tbody>
 		</table>
 	</div>
+	</section>
 	<script >
 		$(".date").on("click",function(){
 			userId=this.id;
@@ -97,5 +99,6 @@
     });
 		});
 	</script>
+	
 </body>
 </html>
