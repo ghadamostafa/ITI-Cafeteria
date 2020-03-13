@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
-<head>
+<head> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
@@ -24,16 +24,11 @@
             size: 24;
         }
     </style>
-</head>
+<!-- </head> -->
 
-<body>
+<!-- <body> -->
     <!--Navbar -->
-    <?php
-    session_start();
-    if (!isset($_SESSION['id'])) {
-        header("Location:login.php");
-    }
-    ?>
+   
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
         <a class="navbar-brand" href="#">Cafeterai</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555" aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,6 +62,5 @@
             </ul>
         </div>
     </nav>
-</body>
-
-</html>
+ <!--    </body>
+</html> -->
