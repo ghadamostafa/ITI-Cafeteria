@@ -5,11 +5,17 @@
 	<?php require("bootstrap.php"); ?>
 	<link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/checksStyle.css">
+	<style>
+		td{
+			color: white;
+
+		}
+	</style>
 </head>
 <body>
 	<?php
 	include 'adminNavBar.php' ;
-	// session_start();
+	session_start();
 	require_once("../Models/dbConnection.php");
 	$fromDate= strtotime( $_SESSION['fromDate'] );
 	$FromDate = date( 'Y-m-d H:i:s', $fromDate );

@@ -27,7 +27,8 @@ if(isset($_POST['submit_btn']))
 		$_SESSION['fromDate'] = $_POST['fromDate'];
 		$_SESSION['toDate'] = $_POST['ToDate'];
 		ob_start();
-		header("location: ../Views/checksOrders.php?id=".$_POST['user']);
+		// exit(header("location: ../Views/checksOrders.php?id=".$_POST['user']));
+		echo("<script>location.href = '../Views/checksOrders.php?id=".$_POST['user']."';</script>");
 	}
 }
 //selection of date and user ,delievered from checks.php

@@ -1,12 +1,12 @@
 $(function () {
 	let SelectedFromDate, SelectedToDate;
 	// let currentRow;
-	$('#datetimepicker6').datetimepicker({
-		useCurrent: false
-	});
-	$('#datetimepicker7').datetimepicker({
-		useCurrent: false
-	});
+	// $('#datetimepicker6').datetimepicker({
+	// 	useCurrent: false
+	// });
+	// $('#datetimepicker7').datetimepicker({
+	// 	useCurrent: false
+	// });
 	$(".userRow").on("click", function () {
 		console.log("first ajax");
 		// console.log($(this).children("i")[0].id);
