@@ -8,7 +8,8 @@
 </head>
 <body>
 	<?php
-	session_start();
+	include 'adminNavBar.php' ;
+	// session_start();
 	require_once("../Models/dbConnection.php");
 	$fromDate= strtotime( $_SESSION['fromDate'] );
 	$FromDate = date( 'Y-m-d H:i:s', $fromDate );
