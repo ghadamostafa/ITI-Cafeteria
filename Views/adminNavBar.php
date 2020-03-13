@@ -28,7 +28,12 @@
 
 <body>
     <!--Navbar -->
-
+    <?php
+    session_start();
+    if (!isset($_SESSION['id'])) {
+        header("Location:login.php");
+    }
+    ?>
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
         <a class="navbar-brand" href="#">Cafeterai</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555" aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,7 +54,7 @@
                     <a class="nav-link" href="processorder.php">Manual Orders</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Checks </a>
+                    <a class="nav-link" href="Checks.php">Checks </a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -62,5 +67,6 @@
             </ul>
         </div>
     </nav>
-    </body>
+</body>
+
 </html>

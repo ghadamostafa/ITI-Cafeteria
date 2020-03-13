@@ -1,8 +1,9 @@
 .dropdown{
-	display: inline;
+	display: inline-block;
 	margin: 10px 50px;
 	width: 300px;
 }
+
 #wrapper{
 	text-align: left;
 }
