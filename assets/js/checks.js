@@ -66,7 +66,6 @@ $(function ()
 								<table style="width:100%">
 								</table>
 								</td></tr>`);
-							debugger;
 							Data[0].data.forEach((element)=>{
 							$(selectedDate).parent("tr").next().find("table").first().append(`
 							<tr >
