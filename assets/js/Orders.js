@@ -29,14 +29,14 @@ orderRow.on("click", function () {
             row.after($(newRow));
             // $("table").css("display", "block");
             jsonData[0].data.forEach((element) => {
-                $productInfo = `<td>
-                <div class="row ">
+                $productInfo = `<td colspan="4">
+                <div class="row">
                     <div class="col-3">
                         <div>
                             <img src="${element.product_image}" width="100px" height="100px" alt="">
                             <p>${element.product_name}</p>
-                            <span>${element.price} LE</span>
-                            <span>${element.Quantity}</span>
+                            <span class="order-price">${element.price} LE</span>
+                            <span class="order-quantity">${element.Quantity}</span>
                         </div>
                     </div>
                 </div>
