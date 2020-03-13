@@ -1,10 +1,17 @@
-.dropdown {
-	display: inline;
+.dropdown{
+	display: inline-block;
 	margin: 10px 50px;
 	width: 300px;
 }
+body {
+	background-image: url("../Images/bg.jpg");
+	/* background-repeat: no-repeat; */
+	background-size: 100%;
+	background-attachment: fixed;
+	/* color: white; */
+}
 
-#wrapper {
+#wrapper{
 	text-align: left;
 }
 

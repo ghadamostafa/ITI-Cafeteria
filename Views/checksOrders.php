@@ -20,9 +20,7 @@
 		on o.user_id = u.user_id  
 		WHERE Date(o.date) >=('".$FromDate. "') AND Date(o.date) <= ('" .$ToDate. "')
 		AND u.user_id=" .$_GET['id'];
-		// echo $query;
 	$result=mysqli_query($connect,$query);
-	// var_dump($result);
 	if($result)
 	{
 	?>
@@ -58,7 +56,6 @@
 			userId=this.id;
 			currentRow=this;
 			selectedDate=$(this).text();
-			console.log(selectedDate);
 			$.ajax({
 	        type:'POST',
 			url:"../Controllers/ChecksController.php",
@@ -72,7 +69,7 @@
 					<table style="width:100%">
 					</table>
 					</td></tr>`);
-				console.log($(currentRow).parents("tr").next().find("table"));
+				
 				Data[0].data.forEach((element)=>{
 				$(currentRow).parents("tr").next().find("table").first().append(`	
 					<tr >

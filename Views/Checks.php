@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Checks</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
 
@@ -77,8 +77,8 @@
 	if(mysqli_num_rows ( $result ) > 0)
 {?>
 	<div id="tableDiv" style="width: 800px;height: 800px;text-align: center;margin:20px auto;">
-			<table class="table table-sm " >
-			  <thead>
+			<table class="table table-sm " style="background-color: white;" >
+			  <thead style="background-color: brown;">
 			    <tr>		   		
 			      <th scope="col" style="text-align: center;">Name</th>
 			      <th scope="col" style="text-align: center;">Total Amount</th>		      
