@@ -78,8 +78,8 @@
 	if(mysqli_num_rows ( $result ) > 0)
 {?>
 	<div id="tableDiv" style="width: 800px;height: 800px;text-align: center;margin:20px auto;">
-			<table class="table table-sm " >
-			  <thead>
+			<table class="table table-sm " style="background-color: white;" >
+			  <thead style="background-color: brown;">
 			    <tr>		   		
 			      <th scope="col" style="text-align: center;">Name</th>
 			      <th scope="col" style="text-align: center;">Total Amount</th>		      
