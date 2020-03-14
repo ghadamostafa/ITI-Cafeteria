@@ -6,10 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/checksStyle.css">
 	<style>
-		td{
-			color: white;
-
-		}
+		
 	</style>
 </head>
 <body>

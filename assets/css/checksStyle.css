@@ -27,12 +27,13 @@ body {
 
 #users {
 	text-align: left;
-	margin: 10px 120px;
+	margin: 10px 145px;
 }
 
 #checksHeader {
 	text-align: left;
-	margin: 20px 120px;
+	margin-left: 150px;
+	margin-top:30px;
 }
 
 #productImg {
@@ -40,7 +41,9 @@ body {
 	width: 100px;
 	height: 100px;
 }
-
+#Dateform {
+	margin-top: 100px !important;
+}
 #ordersTable {
 	width: 800px;
 	height: 800px;
