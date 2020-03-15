@@ -1,11 +1,21 @@
 <?php
 include '../Models/dbConnection.php';
-$result = mysqli_query($connect, "SELECT b.order_id, b.date ,b.status ,b.notes , b.order_room, a.name , b.order_id FROM orders b INNER JOIN users a ON a.user_id = b.user_id WHERE b.status='processing'");
+if(isset($_GET['id'])&&!empty($_GET['id']))
+{
+	$result = mysqli_query($connect, "SELECT b.order_id, b.date ,b.status ,b.notes , b.order_room, a.name , b.order_id, a.image FROM orders b INNER JOIN users a ON a.user_id = b.user_id WHERE b.status='processing'AND a.user_id=".$_GET['id']);
+
+}else{
+	$result = mysqli_query($connect, "SELECT b.order_id, b.date ,b.status ,b.notes , b.order_room, a.name , b.order_id ,a.image FROM orders b INNER JOIN users a ON a.user_id = b.user_id WHERE b.status='processing'");
+
+}
 if ($result) {
-	if (mysqli_fetch_assoc($result) == null) {
+	if ($result == null) {
 		echo '<h1 style="text-align: center">No orders yet</h1>';
 	} else {
 		while ($row = mysqli_fetch_assoc($result)) {  //var_dump($row); 
+			if ($row == null) {		echo '<h1 style="text-align: center">No orders yet</h1>';
+			break;
+			}
 ?>
 			<hr>
 			<div class="row mt-5">
@@ -15,7 +25,7 @@ if ($result) {
 						<li>
 							<div class="row comments mb-2">
 								<div class="col-md-2 col-sm-2 col-3 text-center user-img">
-									<img id="profile-photo" src="http://nicesnippets.com/demo/man01.png" class="rounded-circle" />
+									<img id="profile-photo" src="<?php echo $row['image'];?>" class="rounded-circle" />
 								</div>
 								<div class="col-md-9 col-sm-9 col-9 comment rounded mb-2">
 									<h1 class="m-0"><a href="#"><?php echo  $row['name']; ?></a></h1>
